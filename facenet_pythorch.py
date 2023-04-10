@@ -25,11 +25,13 @@ resnet = InceptionResnetV1(pretrained='vggface2').eval()
 # Using webcam recognize face
 
 # loading data.pt file
-load_data = torch.load('Facenet_pythorch/data.pt') 
+load_data = torch.load('data.pt') 
 embedding_list = load_data[0] 
 name_list = load_data[1] 
 
-cam = cv2.VideoCapture(0) 
+
+cam = cv2.VideoCapture('/home/camilo/Documents/Face-Recognition/camilo.mp4')
+#cam = cv2.VideoCapture(0) 
 count = 0
 cpu_array = []
 memory_array = []
